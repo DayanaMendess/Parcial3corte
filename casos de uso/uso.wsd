@@ -1,0 +1,65 @@
+@startuml
+actor Usuario
+
+package "Gestión de Clientes" {
+  usecase "Registrar Cliente"
+  usecase "Modificar Cliente"
+  usecase "Eliminar Cliente"
+  usecase "Consultar Cliente"
+}
+
+package "Gestión de Facturas" {
+  usecase "Crear Factura"
+  usecase "Modificar Factura"
+  usecase "Eliminar Factura"
+  usecase "Consultar Factura"
+}
+
+package "Gestión de Detalles de Facturas" {
+  usecase "Agregar Detalle Factura"
+  usecase "Modificar Detalle Factura"
+  usecase "Eliminar Detalle Factura"
+  usecase "Consultar Detalle Factura"
+}
+
+package "Gestión de Productos" {
+  usecase "Registrar Producto"
+  usecase "Modificar Producto"
+  usecase "Eliminar Producto"
+  usecase "Consultar Producto"
+}
+
+package "Gestión de Inventario" {
+  usecase "Registrar Entrada"
+  usecase "Registrar Salida"
+  usecase "Modificar Inventario"
+  usecase "Eliminar Inventario"
+  usecase "Consultar Inventario"
+}
+
+Usuario --> "Registrar Cliente"
+Usuario --> "Modificar Cliente"
+Usuario --> "Eliminar Cliente"
+Usuario --> "Consultar Cliente"
+
+Usuario --> "Crear Factura"
+Usuario --> "Modificar Factura"
+Usuario --> "Eliminar Factura"
+Usuario --> "Consultar Factura"
+
+Usuario --> "Agregar Detalle Factura"
+Usuario --> "Modificar Detalle Factura"
+Usuario --> "Eliminar Detalle Factura"
+Usuario --> "Consultar Detalle Factura"
+
+Usuario --> "Registrar Producto"
+Usuario --> "Modificar Producto"
+Usuario --> "Eliminar Producto"
+Usuario --> "Consultar Producto"
+
+Usuario --> "Registrar Entrada"
+Usuario --> "Registrar Salida"
+Usuario --> "Modificar Inventario"
+Usuario --> "Eliminar Inventario"
+Usuario --> "Consultar Inventario"
+@enduml

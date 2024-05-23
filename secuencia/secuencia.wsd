@@ -1,0 +1,25 @@
+@startuml
+actor Usuario
+Usuario -> Cliente: registrar(tipoDocumento, documento, nombre, correo)
+activate Cliente
+Cliente --> Usuario: Cliente registrado
+deactivate Cliente
+
+Usuario -> FacturaCliente: crear(numeroFactura, fecha, cliente)
+activate FacturaCliente
+FacturaCliente -> Cliente: consultar(documento)
+activate Cliente
+Cliente --> FacturaCliente: devolver datos cliente
+deactivate Cliente
+FacturaCliente --> Usuario: Factura creada
+deactivate FacturaCliente
+
+Usuario -> DetalleFactura: agregar(cantidad, valorBruto, valorNeto, valorDescuento, valorTotal)
+activate DetalleFactura
+DetalleFactura -> Producto: consultar(codigo)
+activate Producto
+Producto --> DetalleFactura: devolver datos producto
+deactivate Producto
+DetalleFactura --> Usuario: Detalle de factura agregado
+deactivate DetalleFactura
+@enduml

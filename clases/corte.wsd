@@ -1,0 +1,73 @@
+@startuml
+
+class Cliente {
+    - id: int
+    - tipoDocumento: int 
+    - documento: int 
+    - nombre: String
+    - email: String
+    + modificarCliente()
+    + eliminarCliente()
+    + consultarCliente()
+}
+
+class FacturaCliente {
+    - id: int 
+    - numeroFactura: int 
+    - fecha: Date 
+    - cliente: String 
+    + modificarCliente()
+    + eliminarCliente()
+    + consultarCliente()
+    + registrarCliente()
+}
+
+class DetalleFactura {
+    - id: int 
+    - cantidad: int 
+    - valorBruto: int 
+    - valorNeto: int
+    - valorDescuento: int
+    - valorTotal: int
+    + modificarCliente()
+    + eliminarCliente()
+    + consultarCliente()
+    + agregarCliente()
+}
+
+class Producto {
+    -id: int
+    - codigo: int
+    - nombre: String
+    - description: String
+    - categoria: String
+    - valor: int
+    + modificarCliente()
+    + eliminarCliente()
+    + consultarCliente()
+    + registrarCliente()
+}
+
+class Inventario {
+    - id: int
+    - codigo: int
+    - stock: int
+    - fechaingreso: Date
+    - valorDescuento: int 
+    - porcentajeIva: float 
+    + modificarCliente()
+    + eliminarCliente()
+    + consultarCliente()
+    + registrarEntrada()
+
+    }
+
+Cliente --> FacturaCliente : posee
+FacturaCliente  -->  DetalleFactura : contiene
+DetalleFactura -->  Producto : se refiere
+Producto  -->  Inventario : gestiona
+
+@enduml
+
+  
+
